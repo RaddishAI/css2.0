@@ -6,9 +6,8 @@
   <link href="./src/output.css" rel="stylesheet">
   <title>Authentication</title>
 </head>
-
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
-  <form action="./profile/index.html" method="post" class="bg-white p-6 rounded shadow-md w-full max-w-md">
+  <form id="loginForm" class="bg-white p-6 rounded shadow-md w-full max-w-md">
     <h1 class="text-2xl font-bold mb-4">Login or Register</h1>
     <label class="block mb-2" for="email">Email:</label>
     <input type="email" id="email" name="email" required class="border rounded w-full p-2 mb-4">
@@ -18,6 +17,12 @@
 
     <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded">Submit</button>
   </form>
-</body>
 
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      window.location.href = "./profile/index.html"; 
+    });
+  </script>
+</body>
 </html>
