@@ -1,0 +1,26 @@
+# Node modules
+node_modules/
+
+# Tailwind output
+src/output.css
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+.DS_Store
+.vscode/
+
+# Temporary files and folders
+*.tmp
+*.swp
+
+# Build output
+dist/
+build/
+
+# System files
+Thumbs.db
+.idea/
