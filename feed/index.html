@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../src/output.css" rel="stylesheet">
-  <title> Your Feed - The Social App</title>
+  <title>Your Feed - The Social App</title>
 </head>
 <body class="bg-gray-100">
   <!-- Navbar -->
@@ -23,7 +23,21 @@
     <section class="mb-6">
       <h1 class="text-2xl font-bold mb-4">Feed</h1>
       <input type="text" placeholder="Search posts..." class="w-full border p-2 mb-4 rounded">
-      <button class="px-4 py-2 bg-green-500 text-white rounded mb-4">Sort</button>
+      <button class="px-4 py-2 bg-green-500 text-white rounded flex items-center gap-2" aria-label="Sort Posts">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 17l-4 4m0 0l-4-4m4 4V3" />
+        </svg>
+        Sort
+      </button>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="text-lg font-bold mb-4">Create a New Post</h2>
+      <form>
+        <textarea placeholder="Write your post..." class="w-full border p-2 rounded mb-2" aria-describedby="post-help"></textarea>
+        <span id="post-help" class="text-sm text-gray-500">Write and share your thoughts with others.</span>
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Post</button>
+      </form>
     </section>
 
     <section>
@@ -31,25 +45,17 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <article class="bg-white p-4 rounded shadow">
           <h3 class="font-bold">Post Title 1</h3>
-          <p>Post content goes here...</p>
+          <p>This is an example of a post. You can replace this text with dynamic content.</p>
         </article>
         <article class="bg-white p-4 rounded shadow">
           <h3 class="font-bold">Post Title 2</h3>
-          <p>Post content goes here...</p>
+          <p>This is an example of a post. You can replace this text with dynamic content.</p>
         </article>
         <article class="bg-white p-4 rounded shadow">
           <h3 class="font-bold">Post Title 3</h3>
-          <p>Post content goes here...</p>
+          <p>This is an example of a post. You can replace this text with dynamic content.</p>
         </article>
       </div>
-    </section>
-
-    <section class="mt-6">
-      <h2 class="text-lg font-bold mb-4">Create a New Post</h2>
-      <form>
-        <textarea placeholder="Write your post..." class="w-full border p-2 rounded mb-2"></textarea>
-        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Post</button>
-      </form>
     </section>
   </main>
 </body>
