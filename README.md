@@ -5,6 +5,12 @@
 Welcome to **The Social App**! This project is a responsive front-end for a social media application, designed and built with **HTML**, **TailwindCSS**, and **SASS**. The app features an authentication page, feed page, and profile page, delivering a clean and modern user experience.
 
 ---
+![The Social App - Screenshot](./assets/snippet.png)
+
+## Description
+Welcome to my personal portfolio website, where I showcase my projects, skills, and experience in web development. The site is designed to highlight my work and accomplishments in a professional and user-friendly way.
+
+---
 
 ## 🚀 Features
 
