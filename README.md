@@ -49,7 +49,7 @@ npm run build
 
 ## 📁 Project Structure
 
-CODEBLOCK START
+```
 social-app/
 ├── feed/               # Feed page
 │   └── index.html      # HTML for the feed page
@@ -63,7 +63,7 @@ social-app/
 ├── package.json        # NPM configuration file
 ├── tailwind.config.js  # TailwindCSS configuration
 └── README.md           # Project documentation
-CODEBLOCK END
+```
 
 ---
 
