@@ -80,6 +80,18 @@ Contributions are welcome! Feel free to fork the project, make improvements, and
 
 ---
 
-## 📝 License
+## Special thanks to
+- my girlfriend who always helps me with troubleshooting.
+- my former line manager, Oliver Dipple who is an awesome dude.
+- my teachers who helps me whenever I ask.
+- ChatGPT for sparring with me. 
 
-This project is licensed under the MIT License.
+---
+
+## Contact Me
+
+- [LinkedIn](https://www.linkedin.com/in/petter-r%C3%B8nning-80602613a/)
+- [Portfolio](https://raddishaisportfolio.netlify.app/)
+- [Email](mailto:petter.arbeid@gmail.com)
+
+---
