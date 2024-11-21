@@ -4,26 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../src/output.css" rel="stylesheet">
-  <title>Feed</title>
+  <title> Your Feed - The Social App</title>
 </head>
 <body class="bg-gray-100">
-  <header class="p-4 bg-blue-500 text-white">
-    <h1 class="text-xl font-bold">Feed</h1>
-  </header>
-  <main class="p-4">
-    <input type="text" placeholder="Search..." class="w-full border p-2 mb-4">
-    <button class="px-4 py-2 bg-green-500 text-white rounded mb-4">Sort</button>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <div class="bg-white p-4 rounded shadow">Post Thumbnail 1</div>
-      <div class="bg-white p-4 rounded shadow">Post Thumbnail 2</div>
-      <div class="bg-white p-4 rounded shadow">Post Thumbnail 3</div>
+  <!-- Navbar -->
+  <nav class="p-4 bg-gray-800 text-white flex justify-between items-center">
+    <div class="text-lg font-bold">
+      <a href="/" class="hover:underline">The Social App</a>
     </div>
+    <div class="space-x-4">
+      <a href="../feed/index.html" class="hover:underline">Feed</a>
+      <a href="../profile/index.html" class="hover:underline">Profile</a>
+    </div>
+  </nav>
 
-    <form class="mt-6">
-      <textarea placeholder="Create a new post..." class="w-full border rounded p-2 mb-2"></textarea>
-      <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded">Post</button>
-    </form>
+  <!-- Main Content -->
+  <main class="p-4">
+    <section class="mb-6">
+      <h1 class="text-2xl font-bold mb-4">Feed</h1>
+      <input type="text" placeholder="Search posts..." class="w-full border p-2 mb-4 rounded">
+      <button class="px-4 py-2 bg-green-500 text-white rounded mb-4">Sort</button>
+    </section>
+
+    <section>
+      <h2 class="text-lg font-bold mb-4">Posts</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <article class="bg-white p-4 rounded shadow">
+          <h3 class="font-bold">Post Title 1</h3>
+          <p>Post content goes here...</p>
+        </article>
+        <article class="bg-white p-4 rounded shadow">
+          <h3 class="font-bold">Post Title 2</h3>
+          <p>Post content goes here...</p>
+        </article>
+        <article class="bg-white p-4 rounded shadow">
+          <h3 class="font-bold">Post Title 3</h3>
+          <p>Post content goes here...</p>
+        </article>
+      </div>
+    </section>
   </main>
 </body>
 </html>

@@ -4,24 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./src/output.css" rel="stylesheet">
-  <title>Authentication</title>
+  <title>Authentication - The Social App</title>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-  <form id="loginForm" class="bg-white p-6 rounded shadow-md w-full max-w-md">
-    <h1 class="text-2xl font-bold mb-4">Login or Register</h1>
-    <label class="block mb-2" for="email">Email:</label>
-    <input type="email" id="email" name="email" required class="border rounded w-full p-2 mb-4">
+<body class="bg-gray-100">
+  <!-- Navbar -->
+  <nav class="p-4 bg-gray-800 text-white flex justify-between items-center">
+    <div class="text-lg font-bold">
+      <a href="/" class="hover:underline">The Social App</a>
+    </div>
+    <div class="space-x-4">
+      <a href="/feed/index.html" class="hover:underline">Feed</a>
+      <a href="/profile/index.html" class="hover:underline">Profile</a>
+    </div>
+  </nav>
 
-    <label class="block mb-2" for="password">Password:</label>
-    <input type="password" id="password" name="password" minlength="8" required class="border rounded w-full p-2 mb-4">
+  <!-- Main Content -->
+  <main class="min-h-screen flex items-center justify-center">
+    <section class="bg-white p-6 rounded shadow-md w-full max-w-md">
+      <h1 class="text-2xl font-bold mb-4">Login or Register</h1>
+      <form id="loginForm">
+        <label class="block mb-2" for="email">Email:</label>
+        <input type="email" id="email" name="email" required class="border rounded w-full p-2 mb-4">
 
-    <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded">Submit</button>
-  </form>
+        <label class="block mb-2" for="password">Password:</label>
+        <input type="password" id="password" name="password" minlength="8" required class="border rounded w-full p-2 mb-4">
+
+        <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded">Submit</button>
+      </form>
+    </section>
+  </main>
 
   <script>
     document.getElementById("loginForm").addEventListener("submit", function (event) {
       event.preventDefault();
-      window.location.href = "./profile/index.html"; 
+      window.location.href = "./profile/index.html";
     });
   </script>
 </body>
