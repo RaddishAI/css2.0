@@ -20,30 +20,89 @@
 
   <!-- Main Content -->
   <main class="p-4">
-    <section class="flex items-center mb-6">
-      <img src="https://via.placeholder.com/100" alt="Profile" class="rounded-full w-20 h-20">
-      <div class="ml-4">
-        <h1 class="text-xl font-bold">Username</h1>
-        <p>100 Followers | 50 Following</p>
+    <!-- Profile Header with Background -->
+    <div class="relative mb-6">
+      <img src="https://via.placeholder.com/600x200" alt="Profile Banner" class="w-full h-40 object-cover">
+      <div class="absolute bottom-0 left-4 transform translate-y-1/2">
+        <img src="https://via.placeholder.com/100" alt="Profile picture of Username" class="rounded-full w-20 h-20 border-4 border-white">
       </div>
-      <button class="ml-auto bg-green-500 text-white px-4 py-2 rounded">Follow</button>
+    </div>
+
+    <!-- Profile Info Section -->
+    <section class="flex flex-col sm:flex-row items-center sm:items-start mb-6">
+      <div class="sm:ml-4 text-center sm:text-left">
+        <h1 class="text-xl font-bold">Username</h1>
+        <p class="text-gray-500">This is a short bio about the user. It can include hobbies, interests, or a tagline.</p>
+        <button onclick="editBio()" class="text-blue-500 hover:underline mt-2">Edit Bio</button>
+        <p class="text-gray-500 mt-2">100 Followers | 50 Following</p>
+        <p class="text-gray-500">Posts: 3</p>
+        <div class="mt-4 space-x-2">
+          <a href="#" class="text-blue-500 hover:underline">Twitter</a>
+          <a href="#" class="text-blue-500 hover:underline">LinkedIn</a>
+          <a href="#" class="text-blue-500 hover:underline">GitHub</a>
+        </div>
+      </div>
+      <button id="followButton" class="mt-4 sm:mt-0 sm:ml-auto bg-green-500 text-white px-4 py-2 rounded" onclick="toggleFollow()">
+        Follow
+      </button>
     </section>
 
-    <section>
+    <!-- Connections Section -->
+    <section class="mt-6">
+      <h2 class="text-lg font-bold mb-4">Connections</h2>
+      <div class="space-y-2">
+        <a href="#" class="text-blue-500 hover:underline">View Followers</a>
+        <a href="#" class="text-blue-500 hover:underline">View Following</a>
+      </div>
+    </section>
+
+    <!-- User Posts Section -->
+    <section class="mt-6">
       <h2 class="text-lg font-bold mb-4">User Posts</h2>
-      <article class="bg-white p-4 rounded shadow">
-        <h3 class="font-bold">User Post 1</h3>
-        <p>Post content...</p>
-      </article>
-      <article class="bg-white p-4 rounded shadow">
-        <h3 class="font-bold">User Post 2</h3>
-        <p>Post content...</p>
-      </article>
-      <article class="bg-white p-4 rounded shadow">
-        <h3 class="font-bold">User Post 3</h3>
-        <p>Post content...</p>
-      </article>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <article class="bg-white p-4 rounded shadow">
+          <h3 class="font-bold">User Post 1</h3>
+          <p>Post content...</p>
+          <p class="text-sm text-gray-400 mt-2">Posted on: Nov 21, 2024</p>
+        </article>
+        <article class="bg-white p-4 rounded shadow">
+          <h3 class="font-bold">User Post 2</h3>
+          <p>Post content...</p>
+          <p class="text-sm text-gray-400 mt-2">Posted on: Nov 20, 2024</p>
+        </article>
+        <article class="bg-white p-4 rounded shadow">
+          <h3 class="font-bold">User Post 3</h3>
+          <p>Post content...</p>
+          <p class="text-sm text-gray-400 mt-2">Posted on: Nov 19, 2024</p>
+        </article>
+      </div>
     </section>
   </main>
+
+  <!-- JavaScript -->
+  <script>
+    // Toggle Follow/Unfollow Button
+    function toggleFollow() {
+      const button = document.getElementById("followButton");
+      if (button.textContent === "Follow") {
+        button.textContent = "Unfollow";
+        button.classList.remove("bg-green-500");
+        button.classList.add("bg-red-500");
+      } else {
+        button.textContent = "Follow";
+        button.classList.remove("bg-red-500");
+        button.classList.add("bg-green-500");
+      }
+    }
+
+    // Edit Bio
+    function editBio() {
+      const bio = document.querySelector("p.text-gray-500");
+      const newBio = prompt("Edit your bio:", bio.textContent);
+      if (newBio) {
+        bio.textContent = newBio;
+      }
+    }
+  </script>
 </body>
 </html>
