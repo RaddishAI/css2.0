@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login or register to access The Social App, a platform to connect with friends and share posts.">
   <link href="./src/output.css" rel="stylesheet">
   <title>Authentication - The Social App</title>
 </head>
 <body class="bg-gray-100">
+  
   <!-- Navbar -->
   <nav class="p-4 bg-gray-800 text-white flex justify-between items-center">
     <div class="text-lg font-bold">
@@ -24,11 +26,13 @@
       <h1 class="text-2xl font-bold mb-4">Login or Register</h1>
       <form id="loginForm">
         <label class="block mb-2" for="email">Email:</label>
-        <input type="email" id="email" name="email" required class="border rounded w-full p-2 mb-4">
-
+        <input type="email" id="email" name="email" required class="border rounded w-full p-2 mb-1" aria-describedby="email-help">
+        <span id="email-help" class="text-sm text-gray-500 mb-4 block">Enter a valid email address.</span>
+      
         <label class="block mb-2" for="password">Password:</label>
-        <input type="password" id="password" name="password" minlength="8" required class="border rounded w-full p-2 mb-4">
-
+        <input type="password" id="password" name="password" minlength="8" required class="border rounded w-full p-2 mb-1" aria-describedby="password-help">
+        <span id="password-help" class="text-sm text-gray-500 mb-4 block">Password must be at least 8 characters long.</span>
+      
         <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded">Submit</button>
       </form>
     </section>
@@ -37,6 +41,14 @@
   <script>
     document.getElementById("loginForm").addEventListener("submit", function (event) {
       event.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      if (!email || password.length < 8) {
+        alert("Please enter a valid email and a password of at least 8 characters.");
+        return;
+      }
+
       window.location.href = "./profile/index.html";
     });
   </script>
