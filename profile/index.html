@@ -19,50 +19,48 @@
   </nav>
 
   <!-- Main Content -->
-  <main class="p-4">
-    <!-- Profile Header with Background -->
-    <div class="relative mb-6">
-      <img src="https://via.placeholder.com/600x200" alt="Profile Banner" class="w-full h-40 object-cover">
-      <div class="absolute bottom-0 left-4 transform translate-y-1/2">
-        <img src="https://via.placeholder.com/100" alt="Profile picture of Username" class="rounded-full w-20 h-20 border-4 border-white">
-      </div>
+  <div class="relative mb-6">
+    <!-- Profile Banner -->
+    <img src="https://via.placeholder.com/600x200" alt="Profile Banner" class="w-full h-40 object-cover">
+  
+    <!-- Profile Picture -->
+    <div class="absolute bottom-0 left-4 transform translate-y-1/2">
+      <img src="https://via.placeholder.com/100" alt="Profile picture of Username" class="rounded-full w-20 h-20 border-4 border-white">
     </div>
-
-    <!-- Profile Info Section -->
-    <section class="flex flex-col sm:flex-row items-center sm:items-start mb-6">
-      <div class="sm:ml-4 text-center sm:text-left">
-        <h1 class="text-xl font-bold">Username</h1>
-        <p class="text-gray-500">This is a short bio about the user. It can include hobbies, interests, or a tagline.</p>
-        <button onclick="editBio()" class="text-blue-500 hover:underline mt-2">Edit Bio</button>
-        <p class="text-gray-500 mt-2">100 Followers | 50 Following</p>
-        <p class="text-gray-500">Posts: 3</p>
-
-        <div class="mt-4 flex space-x-4">
-          <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter">
-            <img src="../assets/x.png" alt="Twitter Logo" class="w-6 h-6">
-          </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
-            <img src="../assets/LI-In-Bug.png" alt="LinkedIn Logo" class="w-6 h-6">
-          </a>
-          <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
-            <img src="../assets/github-mark.png" alt="GitHub Logo" class="w-6 h-6">
-          </a>
-        </div>
-
-      </div>
-      <button id="followButton" class="mt-4 sm:mt-0 sm:ml-auto bg-green-500 text-white px-4 py-2 rounded" onclick="toggleFollow()">
-        Follow
-      </button>
-    </section>
+  </div>
+  
+  <!-- Username and Bio Section -->
+  <div class="ml-4 mt-12">
+    <h1 class="text-xl font-bold">Username</h1>
+    <p class="text-gray-500 mt-1">This is a short bio about the user. It can include hobbies, interests, or a tagline.</p>
+    <button onclick="editBio()" class="text-blue-500 hover:underline mt-2">Edit Bio</button>
+  </div>
 
     <!-- Connections Section -->
     <section class="mt-6">
       <h2 class="text-lg font-bold mb-4">Connections</h2>
-      <div class="space-y-2">
+      <div class="flex space-x-4">
         <a href="#" class="text-blue-500 hover:underline">View Followers</a>
         <a href="#" class="text-blue-500 hover:underline">View Following</a>
       </div>
     </section>
+
+    <!-- Social Media Links with One Edit Button -->
+    <div class="mt-6">
+      <h2 class="text-lg font-bold mb-4">Social Links</h2>
+      <div class="flex items-center space-x-4">
+        <a href="https://X.com/yourusername" target="_blank" aria-label="X">
+          <img src="../assets/x.png" alt="Twitter Logo" class="w-6 h-6">
+        </a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
+          <img src="../assets/LI-In-Bug.png" alt="LinkedIn Logo" class="w-6 h-6">
+        </a>
+        <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
+          <img src="../assets/github-mark.png" alt="GitHub Logo" class="w-6 h-6">
+        </a>
+        <button onclick="editSocialLinks()" class="text-blue-500 hover:underline text-sm">Edit</button>
+      </div>
+    </div>
 
     <!-- User Posts Section -->
     <section class="mt-6">
@@ -90,7 +88,7 @@
   <!-- JavaScript -->
   <script>
     console.log("JavaScript is running!");
-  
+
     // Toggle Follow/Unfollow Button
     function toggleFollow() {
       const button = document.getElementById("followButton");
@@ -105,7 +103,7 @@
         button.classList.add("bg-green-500");
       }
     }
-  
+
     // Edit Bio
     function editBio() {
       const bio = document.querySelector("p.text-gray-500");
@@ -115,6 +113,26 @@
         bio.textContent = newBio;
         console.log("New bio:", newBio);
       }
+    }
+
+    // Edit Social Links
+    function editSocialLinks() {
+      const platforms = [
+        { name: "X", baseUrl: "https://X.com/" },
+        { name: "LinkedIn", baseUrl: "https://linkedin.com/in/" },
+        { name: "GitHub", baseUrl: "https://github.com/" },
+      ];
+
+      platforms.forEach((platform) => {
+        const newUsername = prompt(`Edit the ${platform.name} username:`);
+        if (newUsername) {
+          const link = document.querySelector(`a[href^="${platform.baseUrl}"]`);
+          link.href = `${platform.baseUrl}${newUsername}`;
+          console.log(`${platform.name} link updated to: ${link.href}`);
+        }
+      });
+
+      alert("Social links updated!");
     }
   </script>
 </body>
