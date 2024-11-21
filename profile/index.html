@@ -36,11 +36,19 @@
         <button onclick="editBio()" class="text-blue-500 hover:underline mt-2">Edit Bio</button>
         <p class="text-gray-500 mt-2">100 Followers | 50 Following</p>
         <p class="text-gray-500">Posts: 3</p>
-        <div class="mt-4 space-x-2">
-          <a href="#" class="text-blue-500 hover:underline">Twitter</a>
-          <a href="#" class="text-blue-500 hover:underline">LinkedIn</a>
-          <a href="#" class="text-blue-500 hover:underline">GitHub</a>
+
+        <div class="mt-4 flex space-x-4">
+          <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter">
+            <img src="../assets/x.png" alt="Twitter Logo" class="w-6 h-6">
+          </a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
+            <img src="../assets/LI-In-Bug.png" alt="LinkedIn Logo" class="w-6 h-6">
+          </a>
+          <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
+            <img src="../assets/github-mark.png" alt="GitHub Logo" class="w-6 h-6">
+          </a>
         </div>
+
       </div>
       <button id="followButton" class="mt-4 sm:mt-0 sm:ml-auto bg-green-500 text-white px-4 py-2 rounded" onclick="toggleFollow()">
         Follow
@@ -81,9 +89,12 @@
 
   <!-- JavaScript -->
   <script>
+    console.log("JavaScript is running!");
+  
     // Toggle Follow/Unfollow Button
     function toggleFollow() {
       const button = document.getElementById("followButton");
+      console.log("Follow button clicked:", button.textContent);
       if (button.textContent === "Follow") {
         button.textContent = "Unfollow";
         button.classList.remove("bg-green-500");
@@ -94,13 +105,15 @@
         button.classList.add("bg-green-500");
       }
     }
-
+  
     // Edit Bio
     function editBio() {
       const bio = document.querySelector("p.text-gray-500");
+      console.log("Editing bio:", bio.textContent);
       const newBio = prompt("Edit your bio:", bio.textContent);
       if (newBio) {
         bio.textContent = newBio;
+        console.log("New bio:", newBio);
       }
     }
   </script>
