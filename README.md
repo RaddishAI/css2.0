@@ -1,6 +1,6 @@
 # css2.0
 # The Social App
-### README created with help from the amazing ChatGPT.
+### README was created with help from the amazing ChatGPT.
 
 Welcome to **The Social App**! This project is a responsive front-end for a social media application, designed and built with **HTML**, **TailwindCSS**, and **SASS**. The app features an authentication page, feed page, and profile page, delivering a clean and modern user experience.
 
