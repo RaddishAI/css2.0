@@ -28,6 +28,11 @@ Welcome to **The Social App**! This project is a responsive front-end for a soci
 
 ## 📦 Installation and Setup
 
+### Prerequisites
+Make sure you have the following installed:
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [NPM](https://www.npmjs.com/)
+
 ### Development Mode
 To start a local development server and watch for changes, run:
 ```
