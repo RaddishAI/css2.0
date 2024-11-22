@@ -22,7 +22,6 @@
   <main class="flex-grow p-4 bg-gradient-to-r from-blue-50 to-teal-50">
     <!-- Profile Header -->
     <section class="relative mb-6 max-w-4xl mx-auto bg-white shadow rounded-lg border border-gray-300">
-      <!-- Banner with Full Border -->
       <img src="https://via.placeholder.com/600x200" alt="Profile Banner" class="w-full h-40 object-cover border border-gray-300">
       <div class="absolute bottom-0 left-4 transform translate-y-1/2">
         <img src="https://via.placeholder.com/100" alt="Profile picture of Username" class="rounded-full w-24 h-24 border-4 border-white shadow-lg">
@@ -32,7 +31,6 @@
     <!-- Profile Info -->
     <section class="max-w-4xl mx-auto bg-white shadow rounded-lg p-4">
       <div class="flex flex-col sm:flex-row items-center sm:items-start">
-        <!-- Info Section -->
         <div class="text-center sm:text-left sm:ml-4">
           <h1 class="text-2xl font-bold text-gray-800">Username</h1>
           <p class="text-gray-600 mt-1">A short bio about the user. Hobbies, interests, or a tagline.</p>
@@ -42,8 +40,6 @@
             <span class="text-gray-600">50 Following</span>
           </div>
         </div>
-
-        <!-- Follow Button -->
         <button id="followButton" 
                 class="mt-4 sm:mt-0 sm:ml-auto bg-green-500 text-white px-4 py-2 rounded block sm:inline-block text-center"
                 onclick="toggleFollow()">
@@ -73,17 +69,26 @@
     <section class="max-w-4xl mx-auto bg-white shadow rounded-lg p-4 mt-6">
       <h2 class="text-lg font-bold mb-4">User Posts</h2>
       <div class="space-y-4">
-        <article class="bg-gray-100 p-4 rounded shadow">
-          <h3 class="font-bold text-gray-800">Post Title 1</h3>
-          <p class="text-gray-600">This is an example of a post. Replace this text with dynamic content.</p>
+        <article class="bg-gray-100 p-4 rounded shadow flex items-center">
+          <div class="flex-grow">
+            <h3 class="font-bold text-gray-800 post-title">Post Title 1</h3>
+            <p class="text-gray-600 post-content">This is an example of a post. Replace this text with dynamic content.</p>
+          </div>
+          <button onclick="editPost('post1')" class="ml-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:shadow-md">Edit Post</button>
         </article>
-        <article class="bg-gray-100 p-4 rounded shadow">
-          <h3 class="font-bold text-gray-800">Post Title 2</h3>
-          <p class="text-gray-600">This is an example of a post. Replace this text with dynamic content.</p>
+        <article class="bg-gray-100 p-4 rounded shadow flex items-center">
+          <div class="flex-grow">
+            <h3 class="font-bold text-gray-800 post-title">Post Title 2</h3>
+            <p class="text-gray-600 post-content">This is an example of a post. Replace this text with dynamic content.</p>
+          </div>
+          <button onclick="editPost('post2')" class="ml-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:shadow-md">Edit Post</button>
         </article>
-        <article class="bg-gray-100 p-4 rounded shadow">
-          <h3 class="font-bold text-gray-800">Post Title 3</h3>
-          <p class="text-gray-600">This is an example of a post. Replace this text with dynamic content.</p>
+        <article class="bg-gray-100 p-4 rounded shadow flex items-center">
+          <div class="flex-grow">
+            <h3 class="font-bold text-gray-800 post-title">Post Title 3</h3>
+            <p class="text-gray-600 post-content">This is an example of a post. Replace this text with dynamic content.</p>
+          </div>
+          <button onclick="editPost('post3')" class="ml-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:shadow-md">Edit Post</button>
         </article>
       </div>
     </section>
@@ -119,7 +124,7 @@
 
     function editSocialLinks() {
       const platforms = [
-        { name: "X", baseUrl: "https://X.com/" },
+        { name: "Twitter", baseUrl: "https://X.com/" },
         { name: "LinkedIn", baseUrl: "https://linkedin.com/in/" },
         { name: "GitHub", baseUrl: "https://github.com/" },
       ];
@@ -131,6 +136,18 @@
           link.href = `${platform.baseUrl}${newUsername}`;
         }
       });
+    }
+
+    function editPost(postId) {
+      const post = document.getElementById(postId);
+      const postTitle = post.querySelector(".post-title");
+      const postContent = post.querySelector(".post-content");
+
+      const newTitle = prompt("Edit Post Title:", postTitle.textContent);
+      const newContent = prompt("Edit Post Content:", postContent.textContent);
+
+      if (newTitle) postTitle.textContent = newTitle;
+      if (newContent) postContent.textContent = newContent;
     }
   </script>
 </body>
