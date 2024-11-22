@@ -4,40 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../src/output.css" rel="stylesheet">
+  <script defer src="../scripts.js"></script>
   <title>Profile - The Social App</title>
-  <style>
-    /* Modal Styling */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .modal img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-    }
-  </style>
 </head>
+
 <body class="bg-gray-100 flex flex-col min-h-screen">
   <!-- Navbar -->
   <nav class="p-4 bg-gray-800 text-white flex justify-between items-center shadow">
     <div class="text-lg font-bold">
       <a href="/" class="hover:underline">The Social App</a>
     </div>
-    <div class="space-x-4">
+    <!-- Large Screen Menu -->
+    <div id="menu" class="hidden sm:flex space-x-4">
       <a href="../feed/index.html" class="hover:underline">Feed</a>
       <a href="../profile/index.html" class="hover:underline">Profile</a>
     </div>
+    <!-- Burger Button -->
+    <button id="burger" class="sm:hidden text-white">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
   </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden sm:hidden bg-gray-800 text-white flex flex-col p-4">
+    <a href="../feed/index.html" class="hover:underline mb-2">Feed</a>
+    <a href="../profile/index.html" class="hover:underline">Profile</a>
+  </div>
 
   <!-- Main Content -->
   <main class="flex-grow p-4 bg-gradient-to-r from-blue-50 to-teal-50">
