@@ -6,9 +6,9 @@
   <link href="../src/output.css" rel="stylesheet">
   <title>Profile - The Social App</title>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 flex flex-col min-h-screen">
   <!-- Navbar -->
-  <nav class="p-4 bg-gray-800 text-white flex justify-between items-center">
+  <nav class="p-4 bg-gray-800 text-white flex justify-between items-center shadow">
     <div class="text-lg font-bold">
       <a href="/" class="hover:underline">The Social App</a>
     </div>
@@ -19,86 +19,85 @@
   </nav>
 
   <!-- Main Content -->
-  <main class="p-4">
-    <!-- Profile Header with Background -->
-    <div class="relative mb-6">
-      <img src="https://via.placeholder.com/600x200" alt="Profile Banner" class="w-full h-40 object-cover">
+  <main class="flex-grow p-4">
+    <!-- Profile Header -->
+    <section class="relative mb-6 max-w-4xl mx-auto bg-white shadow rounded-lg border border-gray-300">
+      <!-- Banner with Full Border -->
+      <img src="https://via.placeholder.com/600x200" alt="Profile Banner" class="w-full h-40 object-cover border border-gray-300">
       <div class="absolute bottom-0 left-4 transform translate-y-1/2">
-        <img src="https://via.placeholder.com/100" alt="Profile picture of Username" class="rounded-full w-20 h-20 border-4 border-white">
-      </div>
-    </div>
-
-    <!-- Profile Info Section -->
-    <section class="flex flex-col sm:flex-row items-center sm:items-start mb-6 mt-12">
-      <div class="sm:ml-4 text-center sm:text-left">
-        <h1 class="text-xl font-bold">Username</h1>
-        <p class="text-gray-500">This is a short bio about the user. It can include hobbies, interests, or a tagline.</p>
-        <button onclick="editBio()" class="text-blue-500 hover:underline mt-2">Edit Bio</button>
-        <p class="text-gray-500 mt-2">100 Followers | 50 Following</p>
-        <p class="text-gray-500">Posts: 3</p>
-      </div>
-      <button id="followButton" class="mt-4 sm:mt-0 sm:ml-auto bg-green-500 text-white px-4 py-2 rounded" onclick="toggleFollow()">
-        Follow
-      </button>
-    </section>
-
-    <!-- Connections Section -->
-    <section class="mt-6">
-      <h2 class="text-lg font-bold mb-4">Connections</h2>
-      <div class="flex space-x-4">
-        <a href="#" class="text-blue-500 hover:underline">View Followers</a>
-        <a href="#" class="text-blue-500 hover:underline">View Following</a>
+        <img src="https://via.placeholder.com/100" alt="Profile picture of Username" class="rounded-full w-24 h-24 border-4 border-white shadow-lg">
       </div>
     </section>
 
-    <!-- Social Media Links with One Edit Button -->
-    <div class="mt-6">
+    <!-- Profile Info -->
+    <section class="max-w-4xl mx-auto bg-white shadow rounded-lg p-4">
+      <div class="flex flex-col sm:flex-row items-center sm:items-start">
+        <!-- Info Section -->
+        <div class="text-center sm:text-left sm:ml-4">
+          <h1 class="text-2xl font-bold text-gray-800">Username</h1>
+          <p class="text-gray-600 mt-1">A short bio about the user. Hobbies, interests, or a tagline.</p>
+          <button onclick="editBio()" class="text-blue-500 hover:underline mt-2">Edit Bio</button>
+          <div class="mt-4">
+            <span class="text-gray-600">100 Followers</span> |
+            <span class="text-gray-600">50 Following</span>
+          </div>
+        </div>
+
+        <!-- Follow Button -->
+        <button id="followButton" 
+                class="mt-4 sm:mt-0 sm:ml-auto bg-green-500 text-white px-4 py-2 rounded block sm:inline-block text-center"
+                onclick="toggleFollow()">
+          Follow
+        </button>
+      </div>
+    </section>
+
+    <!-- Social Links -->
+    <section class="max-w-4xl mx-auto bg-white shadow rounded-lg p-4 mt-6">
       <h2 class="text-lg font-bold mb-4">Social Links</h2>
       <div class="flex items-center space-x-4">
-        <a href="https://X.com/yourusername" target="_blank" aria-label="Twitter">
-          <img src="../assets/x.png" alt="Twitter Logo" class="w-6 h-6">
+        <a href="https://X.com/yourusername" target="_blank" class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full shadow">
+          <img src="../assets/x.png" alt="X Logo" class="w-6 h-6">
         </a>
-        <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
+        <a href="https://linkedin.com/in/yourusername" target="_blank" class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full shadow">
           <img src="../assets/LI-In-Bug.png" alt="LinkedIn Logo" class="w-6 h-6">
         </a>
-        <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
+        <a href="https://github.com/yourusername" target="_blank" class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full shadow">
           <img src="../assets/github-mark.png" alt="GitHub Logo" class="w-6 h-6">
         </a>
         <button onclick="editSocialLinks()" class="text-blue-500 hover:underline text-sm">Edit</button>
       </div>
-    </div>
+    </section>
 
-    <!-- User Posts Section -->
-    <section class="mt-6">
+    <!-- User Posts -->
+    <section class="max-w-4xl mx-auto bg-white shadow rounded-lg p-4 mt-6">
       <h2 class="text-lg font-bold mb-4">User Posts</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <article class="bg-white p-4 rounded shadow">
-          <h3 class="font-bold">User Post 1</h3>
-          <p>Post content...</p>
-          <p class="text-sm text-gray-400 mt-2">Posted on: Nov 21, 2024</p>
+      <div class="space-y-4">
+        <article class="bg-gray-100 p-4 rounded shadow">
+          <h3 class="font-bold text-gray-800">Post Title 1</h3>
+          <p class="text-gray-600">This is an example of a post. Replace this text with dynamic content.</p>
         </article>
-        <article class="bg-white p-4 rounded shadow">
-          <h3 class="font-bold">User Post 2</h3>
-          <p>Post content...</p>
-          <p class="text-sm text-gray-400 mt-2">Posted on: Nov 20, 2024</p>
+        <article class="bg-gray-100 p-4 rounded shadow">
+          <h3 class="font-bold text-gray-800">Post Title 2</h3>
+          <p class="text-gray-600">This is an example of a post. Replace this text with dynamic content.</p>
         </article>
-        <article class="bg-white p-4 rounded shadow">
-          <h3 class="font-bold">User Post 3</h3>
-          <p>Post content...</p>
-          <p class="text-sm text-gray-400 mt-2">Posted on: Nov 19, 2024</p>
+        <article class="bg-gray-100 p-4 rounded shadow">
+          <h3 class="font-bold text-gray-800">Post Title 3</h3>
+          <p class="text-gray-600">This is an example of a post. Replace this text with dynamic content.</p>
         </article>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center py-4">
+    <p>&copy; 2024 The Social App. All Rights Reserved.</p>
+  </footer>
+
   <!-- JavaScript -->
   <script>
-    console.log("JavaScript is running!");
-
-    // Toggle Follow/Unfollow Button
     function toggleFollow() {
       const button = document.getElementById("followButton");
-      console.log("Follow button clicked:", button.textContent);
       if (button.textContent === "Follow") {
         button.textContent = "Unfollow";
         button.classList.remove("bg-green-500");
@@ -110,18 +109,14 @@
       }
     }
 
-    // Edit Bio
     function editBio() {
-      const bio = document.querySelector("p.text-gray-500");
-      console.log("Editing bio:", bio.textContent);
+      const bio = document.querySelector("p.text-gray-600");
       const newBio = prompt("Edit your bio:", bio.textContent);
       if (newBio) {
         bio.textContent = newBio;
-        console.log("New bio:", newBio);
       }
     }
 
-    // Edit Social Links
     function editSocialLinks() {
       const platforms = [
         { name: "X", baseUrl: "https://X.com/" },
@@ -134,11 +129,8 @@
         if (newUsername) {
           const link = document.querySelector(`a[href^="${platform.baseUrl}"]`);
           link.href = `${platform.baseUrl}${newUsername}`;
-          console.log(`${platform.name} link updated to: ${link.href}`);
         }
       });
-
-      alert("Social links updated!");
     }
   </script>
 </body>

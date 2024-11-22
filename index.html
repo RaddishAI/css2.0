@@ -10,7 +10,7 @@
 <body class="bg-gray-100">
   
   <!-- Navbar -->
-  <nav class="p-4 bg-gray-800 text-white flex justify-between items-center">
+  <nav class="p-4 bg-gray-800 text-white flex justify-between items-center shadow">
     <div class="text-lg font-bold">
       <a href="/" class="hover:underline">The Social App</a>
     </div>
@@ -21,22 +21,26 @@
   </nav>
 
   <!-- Main Content -->
-  <main class="min-h-screen flex items-center justify-center">
+  <main class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-50 to-teal-50">
     <section class="bg-white p-6 rounded shadow-md w-full max-w-md">
-      <h1 class="text-2xl font-bold mb-4">Login or Register</h1>
+      <h1 class="text-2xl font-bold mb-4 text-center text-blue-700">Welcome Back</h1>
+      <p class="text-gray-500 text-center mb-6">Login or Register to continue</p>
       <form id="loginForm">
-        <label class="block mb-2" for="email">Email:</label>
-        <input type="email" id="email" name="email" required class="border rounded w-full p-2 mb-1" aria-describedby="email-help">
-        <span id="email-help" class="text-sm text-gray-500 mb-4 block">Enter a valid email address.</span>
+        <label class="block mb-2 text-gray-600" for="email">Email:</label>
+        <input type="email" id="email" name="email" required class="border rounded-lg w-full p-3 mb-4" aria-describedby="email-help">
       
-        <label class="block mb-2" for="password">Password:</label>
-        <input type="password" id="password" name="password" minlength="8" required class="border rounded w-full p-2 mb-1" aria-describedby="password-help">
-        <span id="password-help" class="text-sm text-gray-500 mb-4 block">Password must be at least 8 characters long.</span>
+        <label class="block mb-2 text-gray-600" for="password">Password:</label>
+        <input type="password" id="password" name="password" minlength="8" required class="border rounded-lg w-full p-3 mb-4" aria-describedby="password-help">
       
-        <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded">Submit</button>
+        <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-teal-500 text-white py-3 rounded-lg hover:shadow-lg transition-all">Login</button>
       </form>
     </section>
   </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center py-4">
+    <p>&copy; 2024 The Social App. All Rights Reserved.</p>
+  </footer>
 
   <script>
     document.getElementById("loginForm").addEventListener("submit", function (event) {
