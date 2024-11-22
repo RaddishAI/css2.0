@@ -14,12 +14,25 @@ Welcome to my personal portfolio website, where I showcase my projects, skills, 
 
 ## 🚀 Features
 
-- Authentication Page: Login and register functionality with form validation. Password requirements: minimum 8 characters.
-- Feed Page: View post thumbnails, create new posts, and utilize search and sort functionality. 
-- Profile Page: User profile with a profile image, bio, and social links. Display of followers, following, and user posts. Editable social media links and user bio.
-- Responsive Design: Fully responsive layout using TailwindCSS.
+- **Authentication Page**: 
+  - Login and register functionality with form validation.
+  - Password requirements: minimum 8 characters.
+  
+- **Feed Page**: 
+  - Search and sort posts.
+  - Create new posts.
+  - Posts are displayed vertically in a clean, responsive layout.
 
-- Note that most of the functionalities are not actually working, like follow/unfollow and such. If you edit SoMe-links and bio, its only stored locally on the spesific page and get ereased after. 
+- **Profile Page**: 
+  - Includes a profile banner, profile picture, and user bio.
+  - Allows editing of social media links and bio.
+  - Posts section with an edit option for individual posts.
+  - Profile banner and picture can be enlarged when clicked.
+
+- **Responsive Design**: 
+  - Optimized for all screen sizes using TailwindCSS.
+  
+> **Note**: Many features, like follow/unfollow and post editing, are only stored locally and do not persist.
 
 ---
 
@@ -87,10 +100,12 @@ Contributions are welcome! Feel free to fork the project, make improvements, and
 ---
 
 ## Special thanks to
-- my girlfriend who always helps me with troubleshooting.
-- my former line manager, Oliver Dipple who is an awesome dude.
-- my teachers who helps me whenever I ask.
-- ChatGPT for sparring with me. 
+- **DALL·E**: Generated images used for profile banners and other visuals.
+- Special thanks to:
+  - My girlfriend, for always supporting me and helping troubleshoot.
+  - My former line manager, Oliver Dipple, for his guidance and mentorship.
+  - My teachers, for their invaluable support.
+  - ChatGPT, for sparring with me during development.
 
 ---
 
